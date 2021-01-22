@@ -1,0 +1,17 @@
+
+    <div class="col-md-12 item-wraper"  *ngFor="let order of orders | keyvalue">
+        <div class="col-md-5">
+            <h2>{{order.value.clientInfo.surname}}  {{order.value.clientInfo.firstName}}</h2>
+            <p>Номер телефону:  {{order.value.clientInfo.phoneNumber}}</p>
+            <p>{{order.value.clientInfo.town}} — {{order.value.clientInfo.post}}:   {{order.value.clientInfo.postNumber}}</p>
+        </div>
+        <div class="col-md-5">
+            <app-ordered-item [items]='order.value.orderInfo'></app-ordered-item>
+        </div>
+        <div class="col-md-2">
+            <h4>{{order.value.status}}</h4>
+        </div>
+        <button class="btn btn-success" *ngIf="order.value.status=='В обробці'" (click)='chengeStatus(order.key,"Відправлено")'>Відправлено</button>
+        <button class="btn btn-warning" *ngIf="order.value.status=='Відправлено'" (click)='chengeStatus(order.key,"Отримано")'>Отримано</button>
+        <button class="btn btn-danger" (click)='deleteOrder(order.key)' >Видалити</button>
+    </div>

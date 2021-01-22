@@ -1,0 +1,16 @@
+<div class="backdrop" (click)="onClose()"></div>
+<div class="container alert-item-box">
+    <div class="row">
+        <div class="col-sm-6">
+            <img style="width: 100%" src={{item.imgUrl}} alt="">
+        </div>
+        <div class="col-sm-6">
+            <h1>{{ item.name }}</h1>
+            <p>Ціна: {{ item.price }} грн.</p>
+        </div>
+        <div class="col-sm-12">
+            <textarea  class="form-control" rows="10" readonly> {{ item.description }}</textarea>
+        </div>
+        <button class="btn btn-danger" (click)="onClose()">X</button>
+    </div>
+</div>

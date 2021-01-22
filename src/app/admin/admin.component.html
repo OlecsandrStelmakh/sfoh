@@ -1,0 +1,12 @@
+<button class="btn btn-info" routerLink="new" routerLinkActive="active">Add New Item</button>
+<div class="row" >
+    <div class="col-sm-4 item-list">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let Item of items"  [routerLink]="[Item.id,'edit']"
+            routerLinkActive="active" style="cursor: pointer">{{ Item.name }}</li>
+        </ul>
+    </div>
+    <div class="col-sm-8 item-list">
+        <router-outlet></router-outlet>
+    </div>
+</div>

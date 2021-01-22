@@ -1,0 +1,45 @@
+<div class="backdrop" routerLink="/cart"></div>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+      <label for="phoneNumber">Номер телефону</label>
+      <input type="number" class="form-control" name="phoneNumber" placeholder="Вкажіть Ваш номер телефону" ngModel required>
+    </div> 
+    <div class="form-group">
+      <label for="surname">Прізвище:</label>
+      <input type="text" class="form-control" name="surname" placeholder="Вкажіть Ваше ім'я" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="firstName">Ім'я</label>
+      <input type="text" class="form-control" name="firstName" placeholder="Вкажіть Вашу фамілію" ngModel required>
+    </div>
+    <div class="form-group">
+        <label for="town">Населений пункт:</label>
+        <input type="text" class="form-control" placeholder="Вкажіть Ваш населений пункт" name="town" ngModel required>
+      </div>
+
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" name='post' value="newPost"   ngModel required>Нова пошта
+      </label>
+      <br>
+      <label class="form-check-label" >
+        <input type="radio" name='post' value="ukrPost"  ngModel required>Укр пошта
+      </label>
+    </div>
+
+
+    <div *ngIf='f.value.post == "ukrPost"'  class="form-group">
+      <label for="postNumber">Поштовий індекс:</label>
+      <input type="number" class="form-control" name="postNumber" placeholder="Вкажіть Ваш поштовий індекс" ngModel required>
+    </div>
+
+    <div *ngIf='f.value.post == "newPost"'  class="form-group">
+      <label for="postNumber">Номер відділення нової пошти:</label>
+      <input type="number" class="form-control" name="postNumber" placeholder="Вкажіть номер відділення" ngModel required> 
+    </div>
+
+    <button class="btn btn-success" type="submit" [disabled]='!f.valid'>Замовити</button>
+
+    <app-loading-spiner class="spiner" *ngIf="saving"></app-loading-spiner>
+
+  </form>

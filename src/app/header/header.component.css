@@ -1,0 +1,28 @@
+
+.container {
+    position: relative;
+}
+
+.cart-container  {
+    position: absolute;
+    right: 20px;
+    bottom: -70px;
+    z-index: 1;
+}
+
+.cart-container button  {
+    border-radius: 40%;
+    height: 50px;
+    width: 50px;
+    border: 2px solid white;
+}
+
+.cart-container button:hover    {
+    color:  darkgrey;
+    border: 2px solid darkgrey;
+}
+
+.hide-cart  {
+    display: none;
+}
+

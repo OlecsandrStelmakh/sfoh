@@ -1,0 +1,55 @@
+.menegers-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.meneger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.meneger img {
+    border-radius: 10px;
+    /* max-width: 150px; */
+    width: min(40%,150px);
+    max-height: 150px;
+}
+
+.meneger a {
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+    margin: 5px;
+}
+
+.fa-facebook-messenger, .fa-facebook {
+    color: #1877F2;
+}
+
+.fa-facebook-messenger:hover, .fa-facebook:hover {
+    color: rgb(9, 44, 90);
+    cursor: pointer;
+}
+
+.fa-viber {
+    color: #665cac;
+}
+
+.fa-viber:hover {
+    color: #2a2547;
+    cursor: pointer;
+}
+
+.reviews-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+iframe {
+    width: 350px;
+    margin-bottom: 10px;
+}

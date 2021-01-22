@@ -1,0 +1,29 @@
+<form  (ngSubmit)="onSubmit()" #itemForm="ngForm">
+    <div class="form-group">
+      <label for="name">Product name</label>
+      <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Enter product name" [(ngModel)]="name">
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="number" class="form-control" id="price" name="price" placeholder="Enter price" [(ngModel)]="price">
+    </div>
+    <div class="form-group">
+      <label for="imgUrl">ImgUrl</label>
+      <input type="text" class="form-control" id="imgUrl" name="imgUrl" placeholder="Enter img url" [(ngModel)]="imgUrl">
+      <img src="{{imgUrl}}" alt="">
+    </div>
+    <div class="form-group">
+      <label for="id">ID</label>
+      <input type="number" class="form-control" [readonly]="editMode" id="id" name="id" placeholder="id"  [(ngModel)]="id">
+    </div>
+    <div class="form-group">
+      <label for="priority">Priority</label>
+      <input type="number" class="form-control" id="priority" name="priority" placeholder="priority"  [(ngModel)]="priority">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea type="text" class="form-control" rows="10" id="description" name="description" placeholder="Enter description"  [(ngModel)]="description"></textarea>
+    </div>
+    <button  class="btn btn-primary" type="submit">Save</button>
+    <button class="btn btn-danger" type="button" *ngIf="editMode" (click)="onDelete()">Delete</button>
+  </form>

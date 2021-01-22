@@ -1,0 +1,11 @@
+a {
+    width: 50%;
+}
+
+.item-conteiner:hover  {
+    box-shadow: 3px 5px 4px 6px #cbcdf1;
+}
+
+h3  {
+    height: 2.2em;
+}

@@ -1,0 +1,11 @@
+div {
+    padding: 20px;
+}
+
+p {
+    z-index: 1;
+}
+
+.alert- {
+    display: none;
+}
